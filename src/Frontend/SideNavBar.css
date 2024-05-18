@@ -1,0 +1,56 @@
+#mySidenav a {
+  position: absolute;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  text-decoration: none;
+  font-size: 11px;
+  color: white;
+  align-items: center;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 60px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet5.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blog {
+  top: 270px;
+  background-image: var();
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects {
+  top: 480px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet2.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact {
+  top: 680px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet7.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

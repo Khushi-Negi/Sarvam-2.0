@@ -1,0 +1,18 @@
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+header nav {
+  float: right;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 8px;
+}

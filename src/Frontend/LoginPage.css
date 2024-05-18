@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Space speed font";
+  src: url("C:\sarvam-2.0\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
+    format("truetype");
+  rel: "preload";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space speed font", sans-serif;
+  letter-spacing: 10px;
+  h1:font-size {
+    font-size: 20px;
+  }
+}
+.container {
+  width: px;
+  height: 200px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("C:\sarvam-2.0\src\assets\bg11.jpg");
+  background-size: cover;
+  font-family: "Space speed font", sans-serif;
+}
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+header nav {
+  float: right;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 8px;
+}
+.content {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+h1 {
+  font-size: 80px;
+  margin-top: 10%;
+}
+p {
+  font-size: 10px;
+}
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+footer nav {
+  text-align: right;
+}
+footer nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 8px;
+}
+#mySidenav a {
+  position: absolute;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  text-decoration: none;
+  font-size: 11px;
+  color: white;
+  align-items: center;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 60px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet5.webp"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-size: cover; /* This ensures the image covers the entire background */
+  background-position: center; /* This centers the background image */
+}
+
+#blog {
+  top: 270px;
+  background-image: url("C:\sarvam-2.0\src\assets\astronout-helmet.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-size: cover; /* This ensures the image covers the entire background */
+  background-position: center;
+}
+
+#projects {
+  top: 480px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet2.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-size: cover; /* This ensures the image covers the entire background */
+  background-position: center;
+}
+
+#contact {
+  top: 680px;
+  background-image: url("C:\sarvam-2.0\src\assets\planet7.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-size: cover; /* This ensures the image covers the entire background */
+  background-position: center;
+}
+
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 2rem 2rem 2.5rem;
+  color: #27d6ed;
+  background-color: rgb(1, 7, 11);
+  border: 1px solid #fff;
+  cursor: pointer;
+  height: 60px;
+  width: 350px;
+  transform: translate3d(0, 0, 0);
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 60px;
+    background: #2dceeb;
+    pointer-events: none;
+    transform: translate3d(0, 60px, 0);
+    transition: all 0.3s 0s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  i {
+    font-style: normal;
+    line-height: 4.5rem;
+    display: inline-block;
+    height: 35px;
+    padding-left: 2px;
+    padding-right: 1px;
+    transition: all 0.3s cubic-bezier(0.19, 1, 1, 1);
+    &:hover {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+  &:hover {
+    color: #000000;
+    &:after {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
