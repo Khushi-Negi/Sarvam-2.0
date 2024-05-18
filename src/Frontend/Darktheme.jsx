@@ -14,9 +14,8 @@ export function DarkTheme() {
         toggleSwitch.checked = true;
       }
     }
-    
 
-    const switchTheme = (e) => {
+   const switchTheme = (e) => {
       if (e.target.checked) {
         document.documentElement.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
