@@ -14,6 +14,7 @@ export function DarkTheme() {
         toggleSwitch.checked = true;
       }
     }
+    
 
     const switchTheme = (e) => {
       if (e.target.checked) {
