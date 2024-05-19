@@ -1,130 +1,96 @@
 import "./StudentFaculty.css";
+import React, { useState} from "react";
 import Navigation from "./Navigation";
-import React, { useState, useEffect } from "react";
-import myImage2 from "../assets/micicon.webp";
 import SideNavBar from "./SideNavBar";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 function FacultyLoginPage() {
-  const [speechRecognition, setSpeechRecognition] = useState(null);
+ 
   const [loginId, setLoginId] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  
+  const navigate = useNavigate(); 
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  useEffect(() => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+  
 
-    recognition.onstart = () =>
-      console.log(
-        "Voice recognition activated. Try speaking into the microphone."
-      );
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      const spokenWords = transcript.trim().split(" ");
-      const spokenNumbers = spokenWords.map(wordToNumber);
-      setLoginId(spokenNumbers.join(""));
-    };
-    recognition.onerror = (event) =>
-      console.error("Speech recognition error:", event.error);
+ 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost/Sarvam/studentlogin.php', { loginId, password });
+      setMessage(response.data.message);
 
-    setSpeechRecognition(recognition);
-  }, []);
-
-  const startListening = () => {
-    if (speechRecognition) {
-      speechRecognition.start();
-    } else {
-      console.error("Speech recognition not supported.");
+      if (response.data.success) {  // Assuming the response contains a success field
+        navigate("/TeacherDetailsForm");  // Navigate to the next page upon successful login
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('An error occurred. Please try again.');
     }
   };
 
-  const wordToNumber = (word) => {
-    const wordMap = {
-      one: "1",
-      two: "2",
-      three: "3",
-      four: "4",
-      five: "5",
-      six: "6",
-      seven: "7",
-      eight: "8",
-      nine: "9",
-      ten: "10",
-      // Add more numbers as needed
-    };
-    return wordMap[word.toLowerCase()] || word;
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //     // Perform form submission logic here
-    //     console.log("Login ID:", loginId);
-    //     console.log("Password:", password);
-    // You can add your logic for handling form submission, such as sending a request to a server
-  };
+
 
   return (
     <div>
       <Navigation />
       <SideNavBar />
+
       <div className="container" style={{ width: 600, height: 400 }}>
-        <h1> PROFESSORS LOGIN </h1>
-        <form onSubmit={handleSubmit}>
+        <h1>PROFFESOR'S LOGIN</h1>
+        <form onSubmit={handleSubmit} method="POST">
           <label htmlFor="loginId">
             <center>
-              <h6 style={{ marginTop: "40px" }}>Login ID:</h6>
+              <h6 style={{ marginTop: "30px" }}>Login ID:</h6>
             </center>
           </label>
-          <input
-            style={{ padding: "11px 140px", height: 43 }}
-            placeholder="Enter your login ID"
-            type="text"
-            id="loginId"
-            name="loginId"
-            value={loginId}
-            onChange={(event) => setLoginId(event.target.value)}
-            required
-          />
-          <img
-            src={myImage2}
-            alt="Mic"
-            className="mic-button"
-            style={{
-              position: "absolute",
-              top: 420,
-              right: 500,
-              cursor: "pointer",
-              height: 40,
-              width: 40,
-            }}
-            onClick={startListening}
-          />
+
+          <center>
+            <input
+              style={{ padding: "11px 140px", height: 43 }}
+              type="text"
+              id="loginId"
+              name="loginId"
+              placeholder="Enter your login ID"
+              value={loginId}
+              onChange={(event) => setLoginId(event.target.value)}
+              required
+            />
+          </center>
+
 
           <label htmlFor="password">
             <center>
-              <h6 style={{ marginTop: "40px" }}>Password:</h6>
+              <h6 style={{ marginTop: "20px" }}>Password:</h6>
             </center>
           </label>
-          <input
-            style={{ padding: "11px 140px", height: 43 }}
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your Password "
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
+          <center>
+            <input
+              style={{ padding: "11px 140px", height: 45 }}
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your Password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+          </center>
           <center>
             <input
               type="submit"
               value="Submit"
-              style={{ marginTop: "20px", width: 300 }}
+              style={{ marginTop: "40px", width: 300 }}
+              
             />
           </center>
         </form>
+        {message && <p>{message}</p>}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import LoginPage from "./Frontend/LoginPage";
 import StudentLoginPage from "./Frontend/StudentLogin";
 import FacultyLoginPage from "./Frontend/FacultyLogin";
 import RegistrationEntryPage from "./Frontend/RegistrationEntryPage";
+import TeacherDetailsForm from "./Frontend/timetable";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/StudentLoginPage" element={<StudentLoginPage />} />
         <Route path="/FacultyLoginPage" element={<FacultyLoginPage />} />
         <Route path="/RegistrationEntryPage" element={<RegistrationEntryPage />}/>
+        <Route path="/TeacherDetailsForm" element={<TeacherDetailsForm />}/>
       </Routes>
     </Router>
   );

@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Space speed font";
+    src: url("C:\Project\Sarvam\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
+      format("truetype");
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space speed font", sans-serif;
+  }
+  
+  body {
+    background-image: url("C:\Project\Sarvam\src\assets\bg11.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "Space speed font", sans-serif;
+    
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    padding: 0px;
+    width: 600px;
+    height: 400px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  header nav {
+    float: right;
+  }
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 8px;
+  }
+  
+  input[type="text"] {
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    width: 550px;
+    border-radius: 30px;
+    padding: 0px;
+    align-items: center;
+  }
+  
+  
+  input[type="submit"] {
+    padding: 15px 20px;
+    background-color: #03263d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  .login-container {
+    width: 700px;
+    margin: 0 auto;
+  }
+  
+  a:hover {
+    color: yellow;
+    text-decoration: underline;
+  }
+  
+  

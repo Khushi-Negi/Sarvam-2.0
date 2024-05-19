@@ -8,9 +8,11 @@ import { DarkTheme } from "./Darktheme";
 function MainPage() {
   DarkTheme();
   return (
-    <div>
+  
+    <div >
       <Navigation />
       <SideNavBar />
+      <div className="first-container">
       <div className="content">
         <h1 style={{ fontSize: 80 }}> Sarvam </h1>
         <strong>
@@ -56,8 +58,10 @@ function MainPage() {
           </nav>
         </footer>
       </div>
-      <DarkTheme />
-    </div>
+      </div>
+      <div className="shift" style={{marginLeft:800}}><DarkTheme /></div>
+     </div>
+  
   );
 }
 

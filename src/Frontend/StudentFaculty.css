@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Space speed font";
-  src: url("C:\sarvam-2.0\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
+  src: url("C:\Project\Sarvam\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
     format("truetype");
 }
 
@@ -17,7 +17,7 @@
 }
 
 body {
-  background-image: url("C:\sarvam-2.0\src\assets\bg11.jpg");
+  background-image: url("C:\Project\Sarvam\src\assets\bg11.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -146,28 +146,29 @@ a:hover {
 
 #about {
   top: 60px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet5.webp");
+  background-image: url("C:\Project\Sarvam\src\assets\planet5.webp");
   background-size: cover;
   background-position: center;
 }
 
 #blog {
   top: 270px;
-  background-image: url("C:\sarvam-2.0\src\assets\astronout-helmet.png");
+  background-image: url("C:\Project\Sarvam\src\assets\astronout-helmet.png");
   background-size: cover;
   background-position: center;
 }
 
 #projects {
   top: 480px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet2.png");
+  background-image: url("C:\Project\Sarvam\src\assets\planet2.png");
   background-size: cover;
   background-position: center;
 }
 
 #contact {
   top: 680px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet7.png");
+  background-image: url("C:\Project\Sarvam\src\assets\planet7.png");
   background-size: cover;
   background-position: center;
 }
+

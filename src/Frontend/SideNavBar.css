@@ -15,9 +15,9 @@
   left: 0;
 }
 
-#about {
+#ERP {
   top: 60px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet5.webp");
+  background-image: url("C:\Project\Sarvam\src\assets\planet5.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -25,9 +25,9 @@
   align-items: center;
 }
 
-#blog {
+#blog{
   top: 270px;
-  background-image: var();
+  background-image: url("C:\Project\Sarvam\src\assets\astronout-helmet.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -37,7 +37,7 @@
 
 #projects {
   top: 480px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet2.png");
+  background-image: url("C:\Project\Sarvam\src\assets\planet2.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -47,7 +47,7 @@
 
 #contact {
   top: 680px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet7.png");
+  background-image: url("C:\Project\Sarvam\src\assets\planet7.png");
   background-size: cover;
   background-position: center;
   display: flex;

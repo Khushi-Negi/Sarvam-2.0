@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Space speed font";
-  src: url("C:\sarvam-2.0\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
+  src: url("C:\Project\Sarvam\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf"),
     format("truetype");
   rel: "preload";
 }
@@ -15,15 +15,18 @@
     font-size: 20px;
   }
 }
-.container {
-  width: px;
-  height: 200px;
+.first-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  padding: 0px;
+  width: 900px;
+  height: 400px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-image: url("C:\sarvam-2.0\src\assets\bg11.jpg");
+  background-image: url("C:\Project\Sarvam\src\assets\bg11.jpg");
   background-size: cover;
   font-family: "Space speed font", sans-serif;
 }
@@ -93,28 +96,28 @@ footer nav a {
 
 #about {
   top: 60px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet5.webp"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-image: url("C:\Project\Sarvam\src\assets\planet5.webp"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
   background-size: cover; /* This ensures the image covers the entire background */
   background-position: center; /* This centers the background image */
 }
 
 #blog {
   top: 270px;
-  background-image: url("C:\sarvam-2.0\src\assets\astronout-helmet.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-image: url("C:\Project\Sarvam\src\assets\astronout-helmet.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
   background-size: cover; /* This ensures the image covers the entire background */
   background-position: center;
 }
 
 #projects {
   top: 480px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet2.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-image: url("C:\Project\Sarvam\src\assets\planet2.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
   background-size: cover; /* This ensures the image covers the entire background */
   background-position: center;
 }
 
 #contact {
   top: 680px;
-  background-image: url("C:\sarvam-2.0\src\assets\planet7.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-image: url("C:\Project\Sarvam\src\assets\planet7.png"); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
   background-size: cover; /* This ensures the image covers the entire background */
   background-position: center;
 }

@@ -1,64 +1,40 @@
 import "./StudentFaculty.css";
-import React, { useState, useEffect } from "react";
-import myImage from "../assets/micicon.webp";
+import React, { useState} from "react";
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 function StudentLoginPage() {
-  const [speechRecognition, setSpeechRecognition] = useState(null);
+ 
   const [loginId, setLoginId] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  
+  const navigate = useNavigate(); 
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  useEffect(() => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+  
 
-    recognition.onstart = () =>
-      console.log(
-        "Voice recognition activated. Try speaking into the microphone."
-      );
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      const spokenWords = transcript.trim().split(" ");
-      const spokenNumbers = spokenWords.map(wordToNumber);
-      setLoginId(spokenNumbers.join(""));
-    };
-    recognition.onerror = (event) =>
-      console.error("Speech recognition error:", event.error);
+ 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost/Sarvam/studentlogin.php', { loginId, password });
+      setMessage(response.data.message);
 
-    setSpeechRecognition(recognition);
-  }, []);
-
-  const startListening = () => {
-    if (speechRecognition) {
-      speechRecognition.start();
-    } else {
-      console.error("Speech recognition not supported.");
+      if (response.data.success) {  // Assuming the response contains a success field
+        navigate("/TeacherDetailsForm");  // Navigate to the next page upon successful login
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('An error occurred. Please try again.');
     }
   };
 
-  const wordToNumber = (word) => {
-    const wordMap = {
-      one: "1",
-      two: "2",
-      three: "3",
-      four: "4",
-      five: "5",
-      six: "6",
-      seven: "7",
-      eight: "8",
-      nine: "9",
-      ten: "10",
-    };
-    return wordMap[word.toLowerCase()] || word;
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+
 
   return (
     <div>
@@ -67,7 +43,7 @@ function StudentLoginPage() {
 
       <div className="container" style={{ width: 600, height: 400 }}>
         <h1>STUDENT LOGIN</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="POST">
           <label htmlFor="loginId">
             <center>
               <h6 style={{ marginTop: "40px" }}>Login ID:</h6>
@@ -87,22 +63,6 @@ function StudentLoginPage() {
             />
           </center>
 
-          {
-            <img
-              src={myImage}
-              alt="Mic"
-              className="mic-button"
-              style={{
-                position: "absolute",
-                top: 385,
-                right: 530,
-                cursor: "pointer",
-                height: 40,
-                width: 40,
-              }}
-              onClick={startListening}
-            />
-          }
 
           <label htmlFor="password">
             <center>
@@ -126,9 +86,11 @@ function StudentLoginPage() {
               type="submit"
               value="Submit"
               style={{ marginTop: "40px", width: 300 }}
+              
             />
           </center>
         </form>
+        {message && <p>{message}</p>}
       </div>
     </div>
   );

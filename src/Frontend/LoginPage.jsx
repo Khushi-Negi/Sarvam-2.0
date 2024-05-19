@@ -12,6 +12,7 @@ function LoginPage() {
     <div>
       <Navigation />
       <SideNavBar />
+      <div className="first-container">
       <div className="content">
         <h1 style={{ fontSize: 80 }}> Sarvam </h1>
 
@@ -72,6 +73,7 @@ function LoginPage() {
           <a href="#">Share</a>
         </nav>
       </footer>
+    </div>
     </div>
   );
 }

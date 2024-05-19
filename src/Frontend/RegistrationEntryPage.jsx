@@ -4,13 +4,25 @@ import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
 
+
 function RegistrationEntryPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
+
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Your form submission logic here
+    const response = await fetch('http://localhost/SARVAM/register.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email }),
+    });
+    const data = await response.json();
+    setMessage(data.message);
   };
 
   return (
@@ -22,7 +34,7 @@ function RegistrationEntryPage() {
         <center>
           <h4>REGISTRATION PAGE</h4>
         </center>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="POST">
           <label htmlFor="name">
             <center>
               <h6 style={{ marginTop: "20px" }}>Name:</h6>
@@ -78,8 +90,8 @@ function RegistrationEntryPage() {
               }}
             >
               Already have an account?{" "}
-              <Link to="/LoginPage">
-                <a
+              <Link to="/LoginPage"
+                
                   style={{
                     fontFamily: "Times New Roman, Times, serif",
                     letterSpacing: "0",
@@ -90,11 +102,12 @@ function RegistrationEntryPage() {
                   }}
                 >
                   Login here
-                </a>
+                
               </Link>
             </p>
           </h6>
         </center>
+        {message && <p>{message}</p>}
       </div>
     </div>
   );

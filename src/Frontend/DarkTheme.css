@@ -2,12 +2,15 @@
   background-image: url("http://localhost:5173/src/assets/bg11.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  color:white;
+  
 }
 /* Dark mode background */
 [data-theme="dark"] {
-  background-image: url("http://localhost:5173/src/assets/bg500.webp");
+  background-image: url("http://localhost:5173/src/assets/bg121.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  color: black;
 }
 
 .theme-switch-wrapper {
@@ -16,7 +19,6 @@
 .theme-switch {
   right: 60px;
 }
-
 .switch {
   position: relative;
   width: 125px;

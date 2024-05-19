@@ -15,7 +15,7 @@ export function DarkTheme() {
       }
     }
 
-   const switchTheme = (e) => {
+    const switchTheme = (e) => {
       if (e.target.checked) {
         document.documentElement.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
@@ -25,7 +25,7 @@ export function DarkTheme() {
         document.documentElement.setAttribute("data-theme", "light");
         localStorage.setItem("theme", "light");
         document.body.style.backgroundImage =
-          'url("http://localhost:5173/src/assets/bg500.webp")'; // Change to your light mode background image
+          'url("http://localhost:5173/src/assets/bg121.jpeg")'; // Change to your light mode background image
       }
     };
 
@@ -38,7 +38,7 @@ export function DarkTheme() {
   return (
     <div className="theme-switch-wrapper">
       <label className="theme-switch" htmlFor="checkbox">
-        <input type="checkbox" id="checkbox" class="switch" />
+        <input type="checkbox" id="checkbox" className="switch" />
       </label>
     </div>
   );
