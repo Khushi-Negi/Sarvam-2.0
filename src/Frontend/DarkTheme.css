@@ -2,8 +2,7 @@
   background-image: url("http://localhost:5173/src/assets/bg11.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color:white;
-  
+  color: white;
 }
 /* Dark mode background */
 [data-theme="dark"] {

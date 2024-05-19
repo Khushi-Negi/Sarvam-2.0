@@ -1,40 +1,39 @@
 import "./StudentFaculty.css";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 function FacultyLoginPage() {
- 
   const [loginId, setLoginId] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  
-  const navigate = useNavigate(); 
+
+  const navigate = useNavigate();
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  
 
- 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost/Sarvam/studentlogin.php', { loginId, password });
+      const response = await axios.post(
+        "http://localhost/Sarvam/studentlogin.php",
+        { loginId, password }
+      );
       setMessage(response.data.message);
 
-      if (response.data.success) {  // Assuming the response contains a success field
-        navigate("/TeacherDetailsForm");  // Navigate to the next page upon successful login
+      if (response.data.success) {
+        // Assuming the response contains a success field
+        navigate("/TeacherDetailsForm"); // Navigate to the next page upon successful login
       }
     } catch (error) {
-      console.error('Error:', error);
-      setMessage('An error occurred. Please try again.');
+      console.error("Error:", error);
+      setMessage("An error occurred. Please try again.");
     }
   };
-
-
 
   return (
     <div>
@@ -63,7 +62,6 @@ function FacultyLoginPage() {
             />
           </center>
 
-
           <label htmlFor="password">
             <center>
               <h6 style={{ marginTop: "20px" }}>Password:</h6>
@@ -86,7 +84,6 @@ function FacultyLoginPage() {
               type="submit"
               value="Submit"
               style={{ marginTop: "40px", width: 300 }}
-              
             />
           </center>
         </form>

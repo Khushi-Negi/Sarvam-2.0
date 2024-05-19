@@ -4,20 +4,17 @@ import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
 
-
 function RegistrationEntryPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost/SARVAM/register.php', {
-      method: 'POST',
+    const response = await fetch("http://localhost/SARVAM/register.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email }),
     });
@@ -90,19 +87,18 @@ function RegistrationEntryPage() {
               }}
             >
               Already have an account?{" "}
-              <Link to="/LoginPage"
-                
-                  style={{
-                    fontFamily: "Times New Roman, Times, serif",
-                    letterSpacing: "0",
-                    fontSize: "20px",
-                    marginTop: "40px",
-                    textAlign: "center",
-                    color: "yellow",
-                  }}
-                >
-                  Login here
-                
+              <Link
+                to="/LoginPage"
+                style={{
+                  fontFamily: "Times New Roman, Times, serif",
+                  letterSpacing: "0",
+                  fontSize: "20px",
+                  marginTop: "40px",
+                  textAlign: "center",
+                  color: "yellow",
+                }}
+              >
+                Login here
               </Link>
             </p>
           </h6>
