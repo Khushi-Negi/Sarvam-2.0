@@ -11,7 +11,9 @@ const Navigation = () => {
     <div>
       <header>
         <nav>
-          <h5 style={{ float: "left", marginRight: "800px" }}>SARVAM</h5>
+          <Link to="/Game">
+          <h5 style={{ float: "left", marginRight: "800px", fontSize:13 }}>SARVAM</h5>
+          </Link>
           <a onClick={notify}>notify</a>
           <Link to="/">Home</Link>
           <Link to="/RegistrationEntryPage">SignIn</Link>

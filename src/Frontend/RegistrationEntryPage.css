@@ -92,6 +92,16 @@ input[type="email"] {
   border-radius: 30px;
   align-items: center;
 }
+input[type="password"] {
+  margin-bottom: 10px;
+  border: 1px solid #f4f0f0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  width: 550px;
+  border-radius: 30px;
+  align-items: center;
+}
 
 input[type="submit"] {
   padding: 15px 20px;
