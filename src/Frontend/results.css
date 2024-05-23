@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Space speed font";
+    src: url("C:\Project\Sarvam\src\Fonts\SpaceSpeedFontRegular-YzvY8.ttf")
+      format("truetype");
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space speed font", sans-serif;
+    letter-spacing: 10px;
+  }
+  
+  body {
+    transition: background-image 0.5s;
+    background-size: cover;
+    font-family: "Space speed font", sans-serif;
+  }
+
+.first-container {
+    margin: 20px auto;
+    margin-top: 10px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  padding: 0px;
+  width: 1250px;
+  height: 400px;
+  align-items: center;
+  }
+  
+  .results-table {
+    width: 1200px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 10px;
+    align-items: center;
+    margin-top: 100px;
+    font-family: "Times New Roman, Times, serif";
+    
+  }
+  
+  .results-table th {
+    padding: 12px 15px;
+    border: 2px solid white; 
+     /* White border for table cells */
+     font-size: 20px;
+  }
+  
+  .results-table td {
+    padding: 12px 15px;
+    border: 2px solid white; 
+    font-family: "Times New Roman, Times, serif";
+    font-size: 20px; /* White border for table cells */
+  }
+  .results-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .results-table tbody tr {
+    border-bottom: 1px solid white;  /* White border for table rows */
+  }
+  
+  .results-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .results-table tbody tr:last-of-type {
+    border-bottom: 2px solid white;  /* White border for the last row */
+  }
+  

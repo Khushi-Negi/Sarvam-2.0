@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
 
-function RegistrationEntryPage() {
+function Registrationforfaculty() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loginId, setLoginId] = useState("");
@@ -18,7 +18,7 @@ function RegistrationEntryPage() {
   }, []);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost/SARVAM/register.php", {
+    const response = await fetch("http://localhost/SARVAM/facultyregister.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -137,7 +137,7 @@ function RegistrationEntryPage() {
             >
               Already have an account?{" "}
               <Link
-                to="/LoginPage"
+                to="/facultyLoginPage"
                 style={{
                   fontFamily: "Times New Roman, Times, serif",
                   letterSpacing: "0",
@@ -158,4 +158,4 @@ function RegistrationEntryPage() {
   );
 }
 
-export default RegistrationEntryPage;
+export default Registrationforfaculty;

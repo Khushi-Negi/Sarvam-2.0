@@ -16,7 +16,7 @@ const Navigation = () => {
           </Link>
           <a onClick={notify}>notify</a>
           <Link to="/">Home</Link>
-          <Link to="/RegistrationEntryPage">SignIn</Link>
+          <Link to="/SigninasPage">SignIn</Link>
           <Link to="/LoginPage">Login</Link>
 
           <ToastContainer />

@@ -3,16 +3,49 @@ import React, { useState } from "react";
 import "./timetable.css"; // Make sure to create this CSS file for styles
 import Navigation from "./Navigation";
 import SideNavBar from "./SideNavBar";
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+
 
 const TeacherDetailsForm = () => {
   const [teacherName, setTeacherName] = useState("");
   const [day, setDay] = useState("");
   const [time, setTime] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+
+  
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // You can add your form submission logic here, like sending the data to a server
-    console.log({ teacherName, day, time });
+    try {
+      const response = await fetch('http://localhost/SARVAM/result.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ teacher_name: teacherName, day, time }),
+      });
+
+      console.log(response); // Log the raw response
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log(data); // Log the parsed response
+
+      if (data.error) {
+        console.error(data.error);
+      } else {
+        navigate('/ResultsPage', { state: { result: data, teacherName } });
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
@@ -123,7 +156,9 @@ const TeacherDetailsForm = () => {
               />
             </center>
           </form>
-        </div>
+         
+    </div>
+      
       </center>
     </div>
   );

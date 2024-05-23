@@ -90,6 +90,7 @@ function AttendanceManagementSystem() {
                   <td>
                     <center>
                     <input
+                    className='present'
                       type="text"
                      placeholder="Present/Absent"
                       value={attendance[student.id] || ''}

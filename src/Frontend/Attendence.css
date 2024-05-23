@@ -43,7 +43,7 @@
     font-size: 20px;
   }
   
-  input[type="text"] {
+ .present {
     margin-bottom: 10px;
     border: 1px solid #ffffff;
     background-color: rgba(0, 0, 0, 0.5);

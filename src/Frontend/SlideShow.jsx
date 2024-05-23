@@ -7,11 +7,7 @@ import SideNavBar from "./SideNavBar";
 const SlideShow = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
-        {
-            title: "Welcome to your profile",
-            link: "/Profile",
-            buttonText: "Profile"
-        },
+      
         {
             title: "Attendance",
             link: "/CheckAttendance",
